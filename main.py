@@ -50,10 +50,7 @@ try:
                 else:
                         frame = picam2.capture_array()
                         red = frame[:,:,0]
-                        #frame = ((red>170) & (red>frame[:,:,1]+20) & (red>frame[:,:,2]+20) ).astype(np.uint8) * 255
                         frame = cv2.inRange(cv2.cvtColor(frame,cv2.COLOR_RGB2HSV),np.array([5,99,99]),np.array([55,255,255]))
-                        #frame = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
-                        #frame = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
                 cv2.imshow('Pi Camera', frame)
                 frame_count += 1
                 elapsed_time = time.time() - start_time
