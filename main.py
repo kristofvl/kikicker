@@ -1,4 +1,3 @@
-  GNU nano 7.2                                                            test.py                                                                     
 # Note to self: install through: sudo apt install python3-picamera2 python3-opencv
 from picamera2 import Picamera2
 import cv2
