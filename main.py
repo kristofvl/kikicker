@@ -19,14 +19,21 @@ if cap.isOpened():
         print( cap.get( cv2.CAP_PROP_FRAME_WIDTH ) )
         print( cap.get( cv2.CAP_PROP_FRAME_HEIGHT ) )
 else:
-        #Internal PiCam
-        picam2 = Picamera2()
-        sensor_modes = picam2.sensor_modes
-        print(sensor_modes)
+        #Internal PiCam:
+        picam2 = Picamera2();  print(picam2.sensor_modes)
+        # for Raspberry Pi Camera V2.1:
+        #config = picam2.create_preview_configuration(
+        #    raw=picam2.sensor_modes[5],
+        #    main={"size": (320, 240)},
+        #    controls={"FrameRate":104.0}  # Set desired frame rate
+        #)
+        # for Raspberry Pi Camera V3:
         config = picam2.create_preview_configuration(
-            #raw=picam2.sensor_modes[5],
-            main={"size": (320, 240)},
-            controls={"FrameRate":104.0}  # Set desired frame rate
+            raw=picam2.sensor_modes[0],
+            #main={"size": (1536, 864)},
+            #main={"size": (768, 432)},
+            main={"size": (384, 216)},
+            controls={"FrameRate":120.13}
         )
         picam2.configure(config)
         picam2.start()
