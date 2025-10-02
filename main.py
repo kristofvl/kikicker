@@ -49,9 +49,8 @@ try:
                                 break
                 else:
                         frame = picam2.capture_array()
-                        red = frame[:,:,0]
-                        frame = cv2.inRange(cv2.cvtColor(frame,cv2.COLOR_RGB2HSV),np.array([5,99,99]),np.array([55,255,255]))
-                cv2.imshow('Pi Camera', frame)
+                        frame = cv2.inRange(cv2.cvtColor(frame,cv2.COLOR_RGB2HSV),np.array([10,120,129]),np.array([40,255,255]))
+                cv2.imshow('output', frame)
                 frame_count += 1
                 elapsed_time = time.time() - start_time
                 if elapsed_time >= 1.0:
