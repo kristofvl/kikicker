@@ -1,1 +1,8 @@
 # kikicker
+
+Installing on a fresh Raspberry Pi 4B/5:
+1. Run the Raspberry Pi Imager and install Other -> latest Raspberry Pi OS Lite (no desktop)
+2. Once this is written to the sd card and running in the Raspberry Pi, connect to it via ssh
+3. Update with: sudo apt update && sudo apt upgrade -y
+4. Install LXQT and the sddm display manager: sudo apt install -y lxqt sddm
+5. 
